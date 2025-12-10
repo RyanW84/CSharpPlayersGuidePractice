@@ -1,9 +1,22 @@
-﻿// Challenge: The Four Sisters and the Duckbear
+﻿// The Dominion of Kings
 
-Console.Write("How many eggs were gathered? ");
-int eggCount = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the number of Provinces");
+int provinces = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the number of Duchies");
+int duchies = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the number of Estates");
+int estates = Convert.ToInt32(Console.ReadLine());
+int result = 0;
+Console.WriteLine("");
 
-int sistersShare = eggCount /4;
-int duckbearShare = eggCount % 4;
+provinces = provinces*=6;
+Console.WriteLine($"The total Provinces score is {provinces}");
+duchies = duchies*=3;
+Console.WriteLine($"The total Duchies score is {duchies}");
+estates = estates*=1;
+Console.WriteLine($"The total Estates score is {estates}");
 
-Console.WriteLine("Each sister gets: " + sistersShare + " and The duckbear gets: " + duckbearShare);
+result = provinces+duchies+estates;
+
+Console.WriteLine();
+Console.WriteLine($"The total is {result}");
