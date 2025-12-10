@@ -1,7 +1,7 @@
 ﻿// The Dominion of Kings
 
-Console.BackgroundColor = ConsoleColor.Yellow;
-Console.ForegroundColor = ConsoleColor.Black;
+Console.BackgroundColor = ConsoleColor.Black;
+Console.ForegroundColor = ConsoleColor.Yellow;
 
 Console.WriteLine("Enter the number of Provinces");
 int provinces = Convert.ToInt32(Console.ReadLine());
