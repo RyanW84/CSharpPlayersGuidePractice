@@ -8,7 +8,8 @@ char tryAgain = 'y';
 
 while (tryAgain is 'y' or 'Y')
 {
-    Console.WriteLine("\nEnter the number of Provinces");
+    Console.WriteLine("The Dominion of Kings\n\n");
+    Console.WriteLine("Enter the number of Provinces");
     var provinces = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("Enter the number of Duchies");
     var duchies = Convert.ToInt32(Console.ReadLine());
@@ -32,6 +33,7 @@ while (tryAgain is 'y' or 'Y')
     
     Console.WriteLine("Press Y to try again, or any other key to exit");
     tryAgain = Console.ReadKey().KeyChar;
+    Console.Clear();
     
 }
 
