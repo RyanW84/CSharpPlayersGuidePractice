@@ -8,7 +8,7 @@ char tryAgain = 'y';
 
 while (tryAgain is 'y' or 'Y')
 {
-    Console.WriteLine("The Dominion of Kings\n\n");
+    Console.WriteLine("The Dominion of Kings\n");
     Console.WriteLine("Enter the number of Provinces");
     var provinces = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("Enter the number of Duchies");
