@@ -12,7 +12,7 @@ Console.WriteLine("Enter the target column");
 int targetColumn = int.Parse((Console.ReadLine()));
 
 int topRow = targetRow;
-int topColumn = targetColumn + 1;
+int topColumn = targetColumn - 1;
 
 int bottomRow = targetRow - 1;
 int bottomColumn = targetColumn;
