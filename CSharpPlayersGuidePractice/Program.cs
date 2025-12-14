@@ -2,14 +2,16 @@
 
 // It's my birthday and I will commit and push if I want to!
 
-Console.BackgroundColor = ConsoleColor.Black;
-Console.ForegroundColor = ConsoleColor.Yellow;
-Console.Title = " The Defence of Consolas";
+using static System.Console;
 
-Console.WriteLine("Enter the target row");
-int targetRow = int.Parse((Console.ReadLine()));
-Console.WriteLine("Enter the target column");
-int targetColumn = int.Parse((Console.ReadLine()));
+BackgroundColor = ConsoleColor.Black;
+ForegroundColor = ConsoleColor.Yellow;
+Title = " The Defence of Consolas";
+
+WriteLine("Enter the target row");
+int targetRow = int.Parse((ReadLine() ?? string.Empty));
+WriteLine("Enter the target column");
+int targetColumn = int.Parse((ReadLine() ?? string.Empty));
 
 int topRow = targetRow;
 int topColumn = targetColumn - 1;
@@ -25,13 +27,18 @@ int rightColumn = targetColumn;
 
 
 
-Console.WriteLine("The Defending coordinates are:");
-Console.WriteLine($"Top: {topRow}, {topColumn}");
-Console.WriteLine($"Bottom: {bottomRow}, {bottomColumn}");
-Console.WriteLine($"Left: {leftRow}, {leftColumn}");
-Console.WriteLine($"Right: {rightRow}, {rightColumn}");
+WriteLine("The Defending coordinates are:");
+WriteLine($"Top: {topRow}, {topColumn}");
+WriteLine($"Bottom: {bottomRow}, {bottomColumn}");
+WriteLine($"Left: {leftRow}, {leftColumn}");
+WriteLine($"Right: {rightRow}, {rightColumn}");
 
-Console.WriteLine("Beep");
-Console.Beep(264, 125);
-
-
+WriteLine("Beep");
+try
+{
+    Beep(264, 125);
+}
+catch (PlatformNotSupportedException exception)
+{
+    Console.WriteLine($"Platform not supported: {exception.Message}");
+}
