@@ -1,40 +1,52 @@
-﻿// Watchtower
+﻿// Watchtower - Refactored Version
+
+Console.Title = "Watchtower";
 Console.BackgroundColor = ConsoleColor.Yellow;
 Console.ForegroundColor = ConsoleColor.Black;
-Console.Title = "Watchtower";
+Console.Clear(); // Ensures clean display with new colors
 
-Console.WriteLine("Enter the X coordinate:");
-var x = int.Parse(Console.ReadLine() ?? string.Empty);
-Console.WriteLine("Enter the Y coordinate:");
-var y = int.Parse(Console.ReadLine() ?? string.Empty);
+Console.WriteLine("=== WATCHTOWER ===");
+Console.WriteLine("Enter the coordinates to detect enemy position.\n");
 
-switch (x)
+int x = ReadInteger("Enter the X coordinate: ");
+int y = ReadInteger("Enter the Y coordinate: ");
+
+string direction = GetDirection(x, y);
+Console.WriteLine($"\nThe enemy is: {direction}!");
+
+Console.WriteLine("\nPress any key to exit...");
+Console.ReadKey();
+
+// Helper method to safely read integer input0
+static int ReadInteger(string prompt)
 {
-    case 0 when y == 0:
-        Console.WriteLine("The Enemy is here!");
-        break;
-    case > 0 when y>0:
-        Console.WriteLine("NE");
-        break;
-    case > 0 when y==0:
-        Console.WriteLine("E");
-        break;
-    case > 0 when y <0:
-        Console.WriteLine("SE");
-        break;
-    case 0 when y < 0:
-        Console.WriteLine("S");
-        break;
-    case 0 when y > 0:
-        Console.WriteLine("N");
-        break;
-    case < 0 when y < 0:
-        Console.WriteLine("SW");
-        break;
-    case < 0 when y == 0:
-        Console.WriteLine("W");
-        break;
-    case < 0 when y > 0:
-        Console.WriteLine("NW");
-        break;
+    int value;
+    while (true)
+    {
+        Console.Write(prompt);
+        if (int.TryParse(Console.ReadLine(), out value))
+        {
+            return value;
+        }
+        Console.WriteLine("Invalid input. Please enter a valid integer.");
+    }
+}
+
+// Determine direction based on coordinates
+static string GetDirection(int x, int y)
+{
+    if (x == 0 && y == 0)
+        return "Here"; // Special case: origin
+
+    // Handle cardinal directions first (on axes)
+    if (x == 0) return y > 0 ? "N" : "S";
+    if (y == 0) return x > 0 ? "E" : "W";
+
+    // Quadrants
+    if (x > 0 && y > 0) return "NE";
+    if (x > 0 && y < 0) return "SE";
+    if (x < 0 && y < 0) return "SW";
+    if (x < 0 && y > 0) return "NW";
+
+    return "unknown"; // Fallback (should never reach here)
 }
