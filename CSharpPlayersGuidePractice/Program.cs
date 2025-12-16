@@ -1,16 +1,7 @@
-﻿// Repairing the Clocktower
+﻿// Watchtower
 Console.BackgroundColor = ConsoleColor.Red;
 Console.ForegroundColor = ConsoleColor.White;
-Console.Title = "Repairing the Clocktower";
+Console.Title = "Watchtower";
 
-Console.WriteLine("Enter the hour");
-int userInput = Int32.Parse(Console.ReadLine());
 
-if (userInput % 2 == 0)
-{
-    Console.WriteLine("Tick");
-}
-else
-{
-    Console.WriteLine("Tock");
 }
