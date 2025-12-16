@@ -4,43 +4,37 @@ Console.ForegroundColor = ConsoleColor.Black;
 Console.Title = "Watchtower";
 
 Console.WriteLine("Enter the X coordinate:");
-var x = int.Parse(Console.ReadLine());
+var x = int.Parse(Console.ReadLine() ?? string.Empty);
 Console.WriteLine("Enter the Y coordinate:");
-var y = int.Parse(Console.ReadLine());
+var y = int.Parse(Console.ReadLine() ?? string.Empty);
 
-if (x == 0 && y == 0)
+switch (x)
 {
-    Console.WriteLine("The Enemy is here!");
-}
-else if( x>0 && y>0 )
-{
-    Console.WriteLine("NE");
-}
-else if (x >0 && y==0)
-{
-    Console.WriteLine("E");
-}
-else if (x>0 && y <0)
-{
-    Console.WriteLine("SE");
-}
-else if (x==0 && y < 0)
-{
-    Console.WriteLine("S");
-}
-else  if (x==0 && y > 0)
-{
-    Console.WriteLine("N");
-}
-else if (x<0 && y < 0)
-{
-    Console.WriteLine("SW");
-}
-else if (x < 0 && y == 0)
-{
-    Console.WriteLine("W");
-}
-else if (x < 0 && y > 0)
-{
-    Console.WriteLine("NW");
+    case 0 when y == 0:
+        Console.WriteLine("The Enemy is here!");
+        break;
+    case > 0 when y>0:
+        Console.WriteLine("NE");
+        break;
+    case > 0 when y==0:
+        Console.WriteLine("E");
+        break;
+    case > 0 when y <0:
+        Console.WriteLine("SE");
+        break;
+    case 0 when y < 0:
+        Console.WriteLine("S");
+        break;
+    case 0 when y > 0:
+        Console.WriteLine("N");
+        break;
+    case < 0 when y < 0:
+        Console.WriteLine("SW");
+        break;
+    case < 0 when y == 0:
+        Console.WriteLine("W");
+        break;
+    case < 0 when y > 0:
+        Console.WriteLine("NW");
+        break;
 }
