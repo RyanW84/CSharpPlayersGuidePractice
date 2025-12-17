@@ -23,7 +23,7 @@ Console.WriteLine(@"The following items are available:
 Which number do you want to see the price of? ");
 
 int input = int.Parse(Console.ReadLine() ?? string.Empty);
-int value;
+float value;
 
 switch (input)
 {
