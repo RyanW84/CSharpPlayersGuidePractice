@@ -1,11 +1,14 @@
-﻿// Challenge: Buying Inventory
+﻿// Challenge: Discounted Inventory
 
-Console.Title = "Buying Inventory";
+Console.Title = "Discounted Inventory";
 Console.BackgroundColor = ConsoleColor.Black;
 Console.ForegroundColor = ConsoleColor.Yellow;
 Console.Clear(); // Ensures clean display with new colors
 
-Console.WriteLine("=== Buying Inventory ===\n\n");
+Console.WriteLine("=== Discounted Inventory ===\n\n");
+
+Console.WriteLine("What is your name!!!");
+string? name = Console.ReadLine();
 
 Console.WriteLine(@"The following items are available:
 
@@ -19,29 +22,40 @@ Console.WriteLine(@"The following items are available:
 
 Which number do you want to see the price of? ");
 
-int input = int.Parse(Console.ReadLine());
+int input = int.Parse(Console.ReadLine() ?? string.Empty);
+int value;
 
 switch (input)
 {
     case 1:
-        Console.WriteLine("Rope: 10 Gold");
+        value = 10;
+        if (name?.ToLower() == "ryan") value /= 2;        Console.WriteLine($"Rope: {value} Gold");
         break;
     case 2:
-        Console.WriteLine("Torches: 15 Gold");
+        value = 15;
+        if (name?.ToLower() == "ryan") value /= 2;        Console.WriteLine($"Torches: {value} Gold");
         break;
     case 3:
-        Console.WriteLine("Climbing Equipment: 25 Gold");
+        value = 25;
+        if (name?.ToLower() == "ryan") value /= 2;        Console.WriteLine($"Climbing Equipment: {value} Gold");
         break;
     case 4:
-        Console.WriteLine("Clean Water: 1 Gold");
+        value =1;
+        if (name?.ToLower() == "ryan") value /= 2;        Console.WriteLine($"Clean Water: {value} Gold");
         break;
     case 5:
-        Console.WriteLine("Machete: 20 Gold");
+        value = 20;
+        if (name?.ToLower() == "ryan") value /= 2;
+        Console.WriteLine($"Machete: {value} Gold");
         break;
     case 6:
-        Console.WriteLine("Canoe: 200 Gold");
+        value = 200;
+        if (name?.ToLower() == "ryan") value /= 2;
+        Console.WriteLine($"Canoe: {value} Gold");
         break;
     case 7:
-        Console.WriteLine("Food Supplies: 1 Gold");
+        value = 1;
+        if (name?.ToLower() == "ryan") value /= 2;
+        Console.WriteLine($"Food Supplies: {value} Gold");
         break;
 }
