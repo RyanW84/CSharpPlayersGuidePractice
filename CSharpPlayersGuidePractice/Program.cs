@@ -25,6 +25,7 @@ Which number do you want to see the price of? ");
 int input = int.Parse(Console.ReadLine() ?? string.Empty);
 float value;
 
+// Switch usage
 switch (input)
 {
     case 1:
