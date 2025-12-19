@@ -30,19 +30,23 @@ switch (input)
 {
     case 1:
         value = 10;
-        if (name?.ToLower() == "ryan") value /= 2;        Console.WriteLine($"Rope: {value} Gold");
+        if (name?.ToLower() == "ryan") value /= 2;        
+        Console.WriteLine($"Rope: {value} Gold");
         break;
     case 2:
         value = 15;
-        if (name?.ToLower() == "ryan") value /= 2;        Console.WriteLine($"Torches: {value} Gold");
+        if (name?.ToLower() == "ryan") value /= 2;        
+        Console.WriteLine($"Torches: {value} Gold");
         break;
     case 3:
         value = 25;
-        if (name?.ToLower() == "ryan") value /= 2;        Console.WriteLine($"Climbing Equipment: {value} Gold");
+        if (name?.ToLower() == "ryan") value /= 2;        
+        Console.WriteLine($"Climbing Equipment: {value} Gold");
         break;
     case 4:
         value =1;
-        if (name?.ToLower() == "ryan") value /= 2;        Console.WriteLine($"Clean Water: {value} Gold");
+        if (name?.ToLower() == "ryan") value /= 2;        
+        Console.WriteLine($"Clean Water: {value} Gold");
         break;
     case 5:
         value = 20;
