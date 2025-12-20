@@ -63,4 +63,6 @@ switch (input)
         if (name?.ToLower() == "ryan") value /= 2;
         Console.WriteLine($"Food Supplies: {value} Gold");
         break;
+    
+    // Saving my streak
 }
