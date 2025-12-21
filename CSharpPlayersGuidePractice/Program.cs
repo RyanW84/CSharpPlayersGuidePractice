@@ -7,7 +7,7 @@ Console.Clear(); // Ensures clean display with new colors
 
 Console.WriteLine("=== The Prototype ===\n\n");
 
-bool continueGame = True;
+bool continueGame = true;
 
 Console.WriteLine("Pilot enter your number (0-100)");
 int pilot = Int32.Parse(Console.ReadLine() ?? string.Empty);
@@ -20,16 +20,16 @@ while (continueGame)
 {
     if (guess < pilot)
     {
-        Console.WriteLine("Too low");
+        Console.WriteLine("\nToo low");
     }
     else if (guess > pilot)
     {
-        Console.WriteLine("Too high");
+        Console.WriteLine("\nToo high");
     }
     else if (guess == pilot)
     {
         continueGame = false;
-        Console.WriteLine("You Win!");
+        Console.WriteLine("\nYou Win!");
         break;
     }
 
