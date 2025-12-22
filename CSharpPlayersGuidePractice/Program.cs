@@ -37,3 +37,4 @@ while (continueGame)
     guess = Int32.Parse(Console.ReadLine() ?? string.Empty);
 }
 
+// It's almost Christmas
