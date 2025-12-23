@@ -1,40 +1,31 @@
-﻿// Challenge: The Prototype
+﻿// Challenge: The Magic Cannon
 
 Console.Title = "Discounted Inventory";
 Console.BackgroundColor = ConsoleColor.Black;
 Console.ForegroundColor = ConsoleColor.Yellow;
 Console.Clear(); // Ensures clean display with new colors
 
-Console.WriteLine("=== The Prototype ===\n\n");
+Console.WriteLine("=== The Magic Cannon ===\n\n");
 
-bool continueGame = true;
-
-Console.WriteLine("Pilot enter your number (0-100)");
-int pilot = Int32.Parse(Console.ReadLine() ?? string.Empty);
-Console.Clear();
-
-Console.WriteLine("Hunter enter your guess (0-100)");
-int guess = Int32.Parse(Console.ReadLine() ?? string.Empty);
-
-while (continueGame)
+for (int i=0; i<100; i++)
 {
-    if (guess < pilot)
+    if (i % 3 == 0 &&  i % 5 == 0)
     {
-        Console.WriteLine("\nToo low");
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine($"{i}:Electric and Fire");
     }
-    else if (guess > pilot)
+    else if (i % 3 == 0)
     {
-        Console.WriteLine("\nToo high");
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine($"{i}: Fire");
     }
-    else if (guess == pilot)
+    else if (i % 5 == 0)
     {
-        continueGame = false;
-        Console.WriteLine("\nYou Win!");
-        break;
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Electric");
     }
-
-    Console.WriteLine("Try again Hunter");    
-    guess = Int32.Parse(Console.ReadLine() ?? string.Empty);
+    else
+    {
+        Console.WriteLine("Normal");
+    }
 }
-
-// It's almost Christmas
