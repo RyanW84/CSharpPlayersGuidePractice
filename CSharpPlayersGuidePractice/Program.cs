@@ -7,12 +7,12 @@ Console.Clear(); // Ensures clean display with new colors
 
 Console.WriteLine("=== The Magic Cannon ===\n\n");
 
-for (int i=0; i<100; i++)
+for (int i=0; i<=100; i++)
 {
     if (i % 3 == 0 &&  i % 5 == 0)
     {
         Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine($"{i}:Electric and Fire");
+        Console.WriteLine($"{i}: Electric and Fire");
     }
     else if (i % 3 == 0)
     {
@@ -22,10 +22,11 @@ for (int i=0; i<100; i++)
     else if (i % 5 == 0)
     {
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("Electric");
+        Console.WriteLine($"{i}: Electric");
     }
     else
     {
-        Console.WriteLine("Normal");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine($"{i}: Normal");
     }
 }
